@@ -55,7 +55,7 @@ export default function Welcome() {
       .querySelector("#submit-button")
       .setAttribute("disabled", isSubmitting);
 
-    const rndInt = Math.floor(Math.random() * 4) + 1;
+    const rndInt = Math.floor(Math.random() * 2) + 1;
     let count;
 
     getNumberOfVoters().then((res) => {
@@ -63,6 +63,7 @@ export default function Welcome() {
       if (rndInt === 1) {
         //only redirect to first system if DB has less than 30 entries to get an equal amount of data for each system
         /*  if (count < 30) { */
+        /* OBS! LINKS NEEDS TO BE CHANGED AFTER DEPLOYMENT */
         window.location.href = "https://e-voting-study-1.netlify.app/info-1";
         /*  } else {
           window.location.href = "https://e-voting-study-2.netlify.app/info-1";
@@ -71,12 +72,12 @@ export default function Welcome() {
       if (rndInt === 2) {
         window.location.href = "https://e-voting-study-2.netlify.app/info-1";
       }
-      if (rndInt === 3) {
+/*       if (rndInt === 3) {
         window.location.href = "https://e-voting-study-3.netlify.app/info-1";
       }
       if (rndInt === 4) {
         window.location.href = "https://e-voting-study-4.netlify.app/info-1";
-      }
+      } */
     });
   };
 
@@ -158,14 +159,10 @@ export default function Welcome() {
         </Text>
         <h3 className="title-margin-top">How we use the data</h3>
         <Text>
-          The data will be used to derive statistical measures of user
-          experience and trust in the presented e-voting system. The data might
-          be referenced, but not printed in full, in the research report which
-          will be published internally at ITU as a Master Thesis Report (meaning
-          that researchers and future students at ITU might have access to the
-          report). They might also be used in aggregated form in academic
-          publishing, meaning that no individual answers will be mentioned, but
-          only overall results will appear.
+          The data will be used to derive statistical measures of users' attitudes towards internet
+          voting systems. The data might be referenced or quoted, but not
+          printed in full unless it is completely anonymized, in the published
+          research reports and other academic publications. 
         </Text>
         <h3 className="title-margin-top">Who has access to the data?</h3>
         <Text>
@@ -242,7 +239,7 @@ export default function Welcome() {
             </Link>
           </ListItem>
         </UnorderedList>
-        <h3 className="title-margin-top">Researchers</h3>
+        <h3 className="title-margin-top">Researcher</h3>
         <UnorderedList>
           <ListItem>
             Christina Frederikke Nissen (
@@ -255,7 +252,7 @@ export default function Welcome() {
             </Link>
             )
           </ListItem>
-          <ListItem>
+      {/*     <ListItem>
             Lara Elisabeth Fredrich (
             <Link
               className="info-link"
@@ -265,10 +262,10 @@ export default function Welcome() {
               lfre@itu.dk
             </Link>
             )
-          </ListItem>
+          </ListItem> */}
         </UnorderedList>
         <Text className="text-margin-top">
-          Student researchers at the IT University of Copenhagen
+          Researcher at the IT University of Copenhagen
         </Text>
         <h3 className="title-margin-top">Questions</h3>
         <Text>

@@ -90,28 +90,41 @@ export default function VoteVerification() {
   };
 
   const search = () => {
-    if (input.length === 0) {
-      document.querySelector("#error-text").style.display = "none";
-    }
-    const table = document.querySelector("#result-table");
-    const children = table.childNodes; // get all children
-    let counter = 0; // iterate over all child nodes
-
-    children.forEach((el) => {
-      if (!el.id.startsWith(input)) {
-        el.style.display = "none";
-      } else {
-        el.style.display = "grid";
-        counter++;
+    const inputValue = input.trim(); // Trim input value to remove whitespace
+    
+    if (inputValue.length === 0) {
+      const table = document.querySelector("#result-table");
+  
+      if (table) {
+        const children = table.childNodes;
+  
+        children.forEach((el) => {
+          el.style.display = "grid"; // Show all rows when input is empty
+        });
       }
-    });
-
-    let message;
-    document.querySelector("#error-text").style.display = "none";
-
-    if (counter === 0) {
-      message = document.querySelector("#error-text");
-      message.style.display = "block";
+  
+      document.querySelector("#error-text").style.display = "none";
+      return; // Exit function when input is empty
+    }
+  
+    const table = document.querySelector("#result-table");
+  
+    if (table) {
+      const children = table.childNodes;
+      let counter = 0; // Initialize counter for found items
+  
+      children.forEach((el) => {
+        if (el.id.toLowerCase().includes(inputValue.toLowerCase())) {
+          el.style.display = "grid"; // Show matching rows
+          counter++;
+        } else {
+          el.style.display = "none"; // Hide non-matching rows
+        }
+      });
+  
+      // Show/hide error message based on search results
+      const errorMessage = document.querySelector("#error-text");
+      errorMessage.style.display = counter === 0 ? "block" : "none";
     }
   };
 

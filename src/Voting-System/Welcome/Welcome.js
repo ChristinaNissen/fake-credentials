@@ -68,7 +68,7 @@ export default function Welcome() {
             ></iframe>
           </div>
           <Button
-            onClick={() => navigate("/verification-code")}
+            onClick={() => navigate("/voting")}
             className="blue-btn"
             width={"100%"}
             marginTop={"4rem"}

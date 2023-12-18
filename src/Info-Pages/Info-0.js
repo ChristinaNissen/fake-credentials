@@ -56,11 +56,11 @@ export default function Welcome() {
       const participantsIndex = Math.floor(Math.random() * totalParticipants);
         if (participantsIndex < totalParticipants / 2) {
           window.location.href =
-          "https://e-voting-system-1-study.netlify.app/info-1";
+          "https://e-voting-system-1-1-study.netlify.app/info-1";
         }
         else{
           window.location.href =
-          "https://e-voting-system-2-study.netlify.app/info-1";
+          "https://e-voting-system-2-1-study.netlify.app/info-1";
         }
   };
 

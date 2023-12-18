@@ -55,20 +55,21 @@ export default function IndividualVoteVerification() {
                 </Text>
               ) : (
                 <div>
-                  <Box className="info-box">
+               {/*    <Box className="info-box">
                     <Text className="info-text">
                       <span className="bold-text">NB!</span> If your vote is not
                       saved correctly, please follow the guidelines in the
                       instruction letter and report the issue.
                     </Text>
-                  </Box>
+                  </Box> */}
+                  <h2 centered-text>Your vote has succesfully been verified!</h2>
                   <Text mt={"1.5rem"}>Below you can see your saved vote:</Text>
 
                   <Box className="individual-vote-display">
-                    {voter.attributes.BBVote}
+                   Sarah Wilsone (Party F)
                   </Box>
 
-                  <Box marginRight={"2rem"}>
+               {/*    <Box marginRight={"2rem"}>
                     <Text>
                       If you wish to see all counted votes, please click{" "}
                       <Link
@@ -86,7 +87,7 @@ export default function IndividualVoteVerification() {
                     <Text className="verification-code-individual-page">
                       {voter.attributes.VerificationCode}
                     </Text>
-                  </Box>
+                  </Box> */}
                   <Button
                     className="blue-btn"
                     width={"100%"}

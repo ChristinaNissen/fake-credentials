@@ -34,9 +34,6 @@ export default function Confirmation() {
            <Text>
             Your vote was succesfully stored and will be counted.{" "}
           </Text>
-          {/* <Text className="text-margin-top">
-            You have completed General Election 2023. 
-          </Text> */}
           <Button className="blue-btn" onClick={() => navigate("/info-2")}>
             Finish
           </Button>

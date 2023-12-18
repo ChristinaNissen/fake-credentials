@@ -63,7 +63,7 @@ export default function IndividualVoteVerification() {
                     </Text>
                   </Box> */}
                   <h2 centered-text>Your vote has succesfully been verified!</h2>
-                  <Text mt={"1.5rem"}>Below you can see your saved vote:</Text>
+                  <Text mt={"1.5rem"}>Below you can see your counted vote:</Text>
 
                   <Box className="individual-vote-display">
                    Sarah Wilsone (Party F)

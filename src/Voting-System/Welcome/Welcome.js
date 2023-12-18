@@ -10,17 +10,16 @@
  *
  * e-voting-system-self-replace is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the 
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
  * along with e-voting-system-self-replace. If not, see <https://www.gnu.org/licenses/>.
  */
 
-import { Button, Text, Image } from "@chakra-ui/react";
+import { Button, Text } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
 import Navbar from "../Navbar/Navbar";
-import VotingOverview from "../../assets/Voting-Overview.png";
 import { useEffect } from "react";
 
 export default function Welcome() {
@@ -39,17 +38,18 @@ export default function Welcome() {
 
           <Text>Welcome to the General Election 2023!</Text>
           <Text className="text-margin-top" marginBottom={"2rem"}>
-            This election consists of three parts. First, you will get a unique
-            verification code, then you will vote. Later on you can use your
-            verification code to verify your vote, i.e. check whether your vote
-            has been counted correctly. This is important to ensure the
-            correctness of the election result.
+            We are thrilled to introduce a convenient online voting system designed to empower your voice in the democratic
+            process. Our user-friendly interface ensures a seamless voting
+            experience, allowing you to cast your ballot from the comfort of
+            your own device.
           </Text>
+          <Text>Click "Next"
+            and cast your vote.</Text>
 
-          <div>
+          {/*    <div>
             <Image src={VotingOverview} />
-          </div>
-          <Text className="text-margin-top" marginBottom={"2rem"}>
+          </div> */}
+          {/*        <Text className="text-margin-top" marginBottom={"2rem"}>
             The demo video below will give you a brief introduction to the
             online voting system. We highly encourage you to watch it, as this
             online election is a bit different from a paper-based election.
@@ -66,12 +66,11 @@ export default function Welcome() {
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               allowfullscreen
             ></iframe>
-          </div>
+          </div> */}
           <Button
             onClick={() => navigate("/voting")}
             className="blue-btn"
-            width={"100%"}
-            marginTop={"4rem"}
+            marginTop={"2rem"}
           >
             Next
           </Button>

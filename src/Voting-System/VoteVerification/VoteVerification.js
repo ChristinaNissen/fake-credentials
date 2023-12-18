@@ -17,12 +17,12 @@
  * along with e-voting-system-self-replace. If not, see <https://www.gnu.org/licenses/>.
  */
 
-import { Box, Link, Text, Spinner } from "@chakra-ui/react";
+import { Box, Text, Spinner } from "@chakra-ui/react";
 import { Button } from "@chakra-ui/react";
 import "./VoteVerification.css";
 import { useNavigate } from "react-router-dom";
 import Navbar from "../Navbar/Navbar";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import getCurrentUser from "../../API/Voter";
 import "../../Info-Pages/InfoPages.css";
 

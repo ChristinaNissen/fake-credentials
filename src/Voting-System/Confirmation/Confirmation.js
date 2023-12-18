@@ -31,14 +31,13 @@ export default function Confirmation() {
       <div className="outer-page-container">
         <div className="inner-page-container-narrow">
           <h1 className="blue-text">Thank you for voting!</h1>
-        {/*   <Text>
-            Once all votes have been counted, the results are published on our
-            offical webpage.{" "}
-          </Text> */}
-          <Text className="text-margin-top">
-            You have completed General Election 2023. 
+           <Text>
+            Your vote was succesfully stored and will be counted.{" "}
           </Text>
-          <Button className="blue-btn" onClick={() => navigate("/info-3")}>
+          {/* <Text className="text-margin-top">
+            You have completed General Election 2023. 
+          </Text> */}
+          <Button className="blue-btn" onClick={() => navigate("/info-2")}>
             Finish
           </Button>
         </div>

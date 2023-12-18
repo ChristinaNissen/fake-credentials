@@ -10,7 +10,7 @@
  *
  * e-voting-system-self-replace is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the 
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
@@ -30,14 +30,12 @@ import {
   ListItem,
   UnorderedList,
 } from "@chakra-ui/react";
-import { getNumberOfVoters } from "../API/Voter";
-import { useNavigate } from "react-router-dom";
+/* import { getNumberOfVoters } from "../API/Voter"; */
 
 export default function Welcome() {
   const [checked, setChecked] = useState(false);
   const [disabledButton, setDisabled] = useState(true);
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const navigate = useNavigate();
 
   function handleChangeCheckbox() {
     if (checked) {
@@ -54,31 +52,16 @@ export default function Welcome() {
     document
       .querySelector("#submit-button")
       .setAttribute("disabled", isSubmitting);
-
-    const rndInt = Math.floor(Math.random() * 2) + 1;
-    let count;
-
-    getNumberOfVoters().then((res) => {
-      count = res;
-      if (rndInt === 1) {
-        //only redirect to first system if DB has less than 30 entries to get an equal amount of data for each system
-        /*  if (count < 30) { */
-        /* OBS! LINKS NEEDS TO BE CHANGED AFTER DEPLOYMENT */
-        window.location.href = "https://e-voting-study-1.netlify.app/info-1";
-        /*  } else {
-          window.location.href = "https://e-voting-study-2.netlify.app/info-1";
-         }  */
-      }
-      if (rndInt === 2) {
-        window.location.href = "https://e-voting-study-2.netlify.app/info-1";
-      }
-/*       if (rndInt === 3) {
-        window.location.href = "https://e-voting-study-3.netlify.app/info-1";
-      }
-      if (rndInt === 4) {
-        window.location.href = "https://e-voting-study-4.netlify.app/info-1";
-      } */
-    });
+      const totalParticipants = 200;
+      const participantsIndex = Math.floor(Math.random() * totalParticipants);
+        if (participantsIndex < totalParticipants / 2) {
+          window.location.href =
+          "https://e-voting-system-1-study.netlify.app/info-1";
+        }
+        else{
+          window.location.href =
+          "https://e-voting-system-2-study.netlify.app/info-1";
+        }
   };
 
   return (
@@ -97,7 +80,7 @@ export default function Welcome() {
           paper. This will be followed by a questionnaire, which you will get
           redirected to from the last page of the voting system. Once you have
           completed the questionnaire, you will be redirected to Prolific. The
-          total duration of the study is approximately 30 minutes. We highly
+          total duration of the study is approximately 20 minutes. We highly
           recommend using a desktop device for the study.
         </Text>
         <h3 className="title-margin-top">Withdrawal</h3>
@@ -124,14 +107,14 @@ export default function Welcome() {
         </Text>
         <h3 className="title-margin-top">Compensation</h3>
         <Text>
-          Each participant will receive 4.50 £ at the conclusion of the study
+          Each participant will receive 3 £ at the conclusion of the study
           through Prolific.
         </Text>
         <h3 className="title-margin-top">How we handle and delete the data</h3>
         <Text>
           If a participant discloses any personal information about themselves
           or other people in the voting system or when answering the
-          questionnaire, the researchers will remove this from the dataset and
+          questionnaire that could lead to identification, the researchers will remove this from the dataset and
           replace it with a placeholder.{" "}
           {/* The non-anonymised data set will be
           deleted after the study has been completed (latest 31st of December
@@ -159,17 +142,17 @@ export default function Welcome() {
         </Text>
         <h3 className="title-margin-top">How we use the data</h3>
         <Text>
-          The data will be used to derive statistical measures of users' attitudes towards internet
-          voting systems. The data might be referenced or quoted, but not
-          printed in full unless it is completely anonymized, in the published
-          research reports and other academic publications. 
+          These data will be used to derive statistical measures of users'
+          attitudes towards internet voting systems. The data might be
+          referenced or quoted, but not printed in full unless it is completely
+          anonymized, in the published research reports and other academic
+          publications.
         </Text>
         <h3 className="title-margin-top">Who has access to the data?</h3>
         <Text>
           The researchers have access to the original data until it has been
-          edited to replace given personal information with placeholders to
-          anonymise it. The anonymised data will be made available to the
-          supervising researchers and the external censor assessing the project.
+          edited to replace given personal information with placeholders as to
+          anonymize it.
         </Text>
         <h3 className="title-margin-top">Third Parties</h3>
         <Text>
@@ -186,10 +169,10 @@ export default function Welcome() {
             policy for more information:{" "}
             <Link
               className="info-link"
-              href="https://www.surveyxact.com/product/data-security/"
+              href="https://rambollxact.com/cookie-and-privacy-policy"
               target={"_blank"}
             >
-              https://www.surveyxact.com/product/data-security/
+              https://rambollxact.com/cookie-and-privacy-policy
             </Link>
           </ListItem>
           <ListItem className="text-margin-top">
@@ -239,7 +222,7 @@ export default function Welcome() {
             </Link>
           </ListItem>
         </UnorderedList>
-        <h3 className="title-margin-top">Researcher</h3>
+        <h3 className="title-margin-top">Researchers</h3>
         <UnorderedList>
           <ListItem>
             Christina Frederikke Nissen (
@@ -252,26 +235,26 @@ export default function Welcome() {
             </Link>
             )
           </ListItem>
-      {/*     <ListItem>
-            Lara Elisabeth Fredrich (
+          <ListItem>
+            Oksana Kulyk (
             <Link
               className="info-link"
-              href="mailto:lfre@itu.dk"
+              href="mailto:okku@itu.dk"
               target={"_blank"}
             >
-              lfre@itu.dk
+              okku@itu.dk
             </Link>
             )
-          </ListItem> */}
+          </ListItem>
         </UnorderedList>
         <Text className="text-margin-top">
-          Researcher at the IT University of Copenhagen
+          Researchers at the IT University of Copenhagen
         </Text>
         <h3 className="title-margin-top">Questions</h3>
         <Text>
           For any questions concerning our processing of your personal data,
-          please contact one of the students involved in the project (see
-          contact details above).
+          please contact the researchers involved in the project (see contact
+          details above).
         </Text>
         <Checkbox
           className="check-box check-box-red"
@@ -287,6 +270,7 @@ export default function Welcome() {
           className="red-btn"
           disabled={disabledButton}
           id="submit-button"
+          color="white"
         >
           {isSubmitting && <Spinner size="sm" mr={"1rem"} />}
           Start

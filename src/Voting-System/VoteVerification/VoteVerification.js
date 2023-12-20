@@ -26,7 +26,7 @@ import React from "react";
 import getCurrentUser from "../../API/Voter";
 import "../../Info-Pages/InfoPages.css";
 
-export default function IndividualVoteVerification() {
+export default function VoteVerification() {
   const navigate = useNavigate();
   const voter = getCurrentUser();
   

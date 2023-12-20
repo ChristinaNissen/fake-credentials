@@ -38,7 +38,10 @@ export default function VoteVerification() {
         <div className="inner-page-container-wide">
           <h1 className="blue-text centered-text">Vote Verification</h1>
           {voter == null ? (
-            <Spinner />
+             <Text className="red-text">
+             The election results are not available yet.
+             <br /> Please try again later.
+           </Text>
           ) : (
             <div>
               {voter.attributes.Vote === "" ? (

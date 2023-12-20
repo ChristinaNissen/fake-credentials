@@ -54,17 +54,14 @@ export async function saveVote(vote, bbVote) {
   }
 }
 
+
 export async function saveReportOfProblem(problem) {
   const Voter = getCurrentUser();
-  if (Voter) {
-    Voter.set("Problem_Reporting", problem);
-    try {
-      await Voter.save();
-    } catch (error) {
-      console.log("Error saving report of problem: " + error);
-    }
-  } else {
-    console.log("Error: Current user not found.");
+  Voter.set("Problem_Reporting", problem);
+  try {
+    await Voter.save();
+  } catch (error) {
+    console.log("Error saving report of problem: " + error);
   }
 }
 

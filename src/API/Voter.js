@@ -56,13 +56,18 @@ export async function saveVote(vote, bbVote) {
 
 export async function saveReportOfProblem(problem) {
   const Voter = getCurrentUser();
-  Voter.set("Problem_Reporting", problem);
-  try {
-    await Voter.save();
-  } catch (error) {
-    console.log("Error saving report of problem: " + error);
+  if (Voter) {
+    Voter.set("Problem_Reporting", problem);
+    try {
+      await Voter.save();
+    } catch (error) {
+      console.log("Error saving report of problem: " + error);
+    }
+  } else {
+    console.log("Error: Current user not found.");
   }
 }
+
 
 export async function getNumberOfVoters(){
   const query = new Parse.Query('User');

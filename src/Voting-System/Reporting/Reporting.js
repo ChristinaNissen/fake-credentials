@@ -43,7 +43,7 @@ export default function Reporting() {
       return "Input field cannot be empty";
     }
     if (voter === null){
-      return "You can not report a problem yet because you have not clicked the \"Start\" button on the page where you download the instructions for the voting system"
+      return "You cannot report a problem because you have not clicked the 'Start' button on the webpage where you are supposed to download the instructions for the voting system."
     }
   };
 

@@ -66,7 +66,7 @@ export default function IndividualVoteVerification() {
                   <Text mt={"1.5rem"}>Below you can see your counted vote:</Text>
 
                   <Box className="individual-vote-display">
-                   {user.attributes.Vote}
+                   {voter.attributes.Vote}
                   </Box>
 
                {/*    <Box marginRight={"2rem"}>

@@ -32,37 +32,12 @@ import {
 } from "@chakra-ui/react";
 import { Form, Formik } from "formik";
 import getCurrentUser, { addVoter, loginVoter } from "../API/Voter";
-import Instructions from "../assets/Instructions_e-voting.pdf";
-import { downloadFile } from "../utils";
 
 export default function Info1() {
-  const [checked, setChecked] = useState(false);
-  const [disabledButton, setDisabled] = useState(true);
-  const [downloaded, setDownloaded] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const voter = getCurrentUser();
   const navigate = useNavigate();
 
-  const handleChangeCheckbox = () => {
-    if (checked) {
-      setChecked(false);
-      setDisabled(true);
-    } else if (!checked && !downloaded) {
-      setChecked(true);
-      setDisabled(true);
-    } else if (!checked && downloaded) {
-      setChecked(true);
-      setDisabled(false);
-    }
-  };
-
-  const downloadInstructions = () => {
-    downloadFile(Instructions, "General-Election-2023.pdf");
-    setDownloaded(true);
-    if (checked) {
-      setDisabled(false);
-    }
-  };
 
   const submitForm = () => {
     setIsSubmitting(true);
@@ -121,41 +96,13 @@ export default function Info1() {
                   </GridItem>
                   <GridItem className="info1-steps-griditem">
                     <Text>
-                      All candidates are fictional and for the purpose of this
+                      For the purpose of this
                       study we ask you to vote for{" "}
                       <span className="bold-text red-text">Sarah Wilson.</span>
                     </Text>
-                    <Checkbox
-                      className="check-box check-box-red"
-                      isChecked={checked}
-                      onChange={handleChangeCheckbox}
-                    >
-                      I understand and will vote for the candidate Sarah Wilson.
-                    </Checkbox>
+                  
                   </GridItem>
-                  <GridItem className="info1-steps-numbers">
-                    <Text>2</Text>
-                  </GridItem>
-                  <GridItem className="info1-steps-griditem">
-                    <Text className="bold-text">
-                      Please download the instruction letter which you need to
-                      follow to complete the General Election 2023.{" "}
-                    </Text>
-                    <Text className="text-margin-top">
-                      In a real election you would get these instructions as a
-                      physical or digital letter by the election authorities.
-                    </Text>
-                    <Text className="red-text text-margin-top">
-                      Make sure that you can access the letter throughout the
-                      study.
-                    </Text>
-                    <Button onClick={downloadInstructions} className="red-btn">
-                      <span className="material-symbols-outlined medium-icon margin-right-icon">
-                        download
-                      </span>
-                      Download
-                    </Button>
-                  </GridItem>
+                 
                   <GridItem className="info1-steps-numbers" />
 
                   <GridItem
@@ -172,7 +119,6 @@ export default function Info1() {
                       id="submit-pid"
                       type="submit"
                       className="red-btn"
-                      isDisabled={disabledButton}
                       mt={"1rem"}
                     >
                       {isSubmitting && <Spinner size="sm" mr={"1rem"} />} Start

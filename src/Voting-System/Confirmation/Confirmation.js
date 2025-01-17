@@ -21,9 +21,16 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import { Button, Text } from "@chakra-ui/react";
 import Navbar from "../Navbar/Navbar";
+import { logoutVoter } from "../../API/Voter";
 
 export default function Confirmation() {
   const navigate = useNavigate();
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();  
+    logoutVoter();
+    navigate("/start");
+  };
 
   return (
     <div>
@@ -31,11 +38,11 @@ export default function Confirmation() {
       <div className="outer-page-container">
         <div className="inner-page-container-narrow">
           <h1 className="blue-text">Thank you for voting!</h1>
-           <Text>
-            Your vote was succesfully stored and will be counted.{" "}
+          <Text>
+            Your vote was successfully stored and will be counted.
           </Text>
-          <Button className="blue-btn" onClick={() => navigate("/info-2")}>
-            Finish
+          <Button className="blue-btn" onClick={handleSubmit}>
+            Log ud 
           </Button>
         </div>
       </div>

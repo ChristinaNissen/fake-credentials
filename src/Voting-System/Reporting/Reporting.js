@@ -26,7 +26,7 @@ import {
   FormLabel,
   Spinner,
 } from "@chakra-ui/react";
-import { saveReportOfProblem } from "../../API/Voter";
+//import { saveReportOfProblem } from "../../API/Voter";
 import { Field, Form, Formik } from "formik";
 import Navbar from "../Navbar/Navbar";
 import { ReportingConfirmation } from "./ReportingConformation";
@@ -49,7 +49,7 @@ export default function Reporting() {
 
   const handleSubmit = async (value) => {
     setIsSubmitting(true);
-    await saveReportOfProblem(value.text);
+    //await saveReportOfProblem(value.text);
     document.querySelector("#reporting-form").style.display = "none";
     document.querySelector("#reporting-confirmation").style.visibility =
       "visible";

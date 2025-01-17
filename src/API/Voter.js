@@ -19,11 +19,11 @@
 
 import Parse from "parse";
 
-export async function addVoter(ID) {
+export async function addVoter(ID, password) {
   let user = new Parse.User();
   user.set("username", ID);
   user.set("password", ID);
-  user.set("VerificationCode", "");
+  user.set("credential", password);
   user.set("Vote", "");
   await user.signUp();
 }
@@ -32,21 +32,36 @@ export async function loginVoter(ID) {
   await Parse.User.logIn(ID, ID);
 }
 
+export async function logoutVoter(){
+  getCurrentUser();
+  await Parse.User.logOut();
+    console.log("User logged out successfully")
+}
+
 export default function getCurrentUser() {
   let currentUser = Parse.User.current();
   return currentUser;
 }
 
-export async function saveVerificationCode(verificationCode) {
+export async function saveVote(vote) {
+  const Voter = getCurrentUser();
+  Voter.set("Vote", vote);
+  try {
+    await Voter.save();
+  } catch (error) {
+    console.log("Error saving vote: " + error);
+  }
+}
+
+/*export async function saveVerificationCode(verificationCode) {
   const Voter = getCurrentUser();
   Voter.set("VerificationCode", verificationCode);
   await Voter.save();
 }
 
-export async function saveVote(vote, bbVote) {
+export async function saveVote(vote) {
   const Voter = getCurrentUser();
   Voter.set("Vote", vote);
-  Voter.set("BBVote", bbVote);
   try {
     await Voter.save();
   } catch (error) {
@@ -75,4 +90,4 @@ export async function getNumberOfVoters(){
     } catch (error) {
       console.log(`Error: ${error}`);
     }
-}
+}*/

@@ -18,7 +18,7 @@
  */
 
 import "./Voting.css";
-import { RadioGroup, Radio, Box, GridItem, Grid, Text } from "@chakra-ui/react";
+import { RadioGroup, Radio, Box, GridItem, Grid, Text, Stack } from "@chakra-ui/react";
 import Candidates from "../../JSON/candidates.json";
 import PopOver from "./PopOver";
 import { useState, useEffect } from "react";
@@ -43,28 +43,49 @@ export default function Voting() {
             <h1 className="blue-text">Afstemning</h1>
 
             <Text  display={voter.attributes.Vote === "" ? "box" : "none"}>
-            For at kunne stemme i Folketingsvalget, vælg venligst en kandidat nedenfor og klik på "Afgiv stemme".
+            For at afgive din stemme, sæt venligst et kryds(X) ud fra enten et
+            parti eller en kandidat.
+            De listede kandidater herunder er respektive i forhold til din
+            bopæl.
             </Text>
           </div>
           {voter.attributes.Vote === "" ?
     <Box>
           <RadioGroup onChange={setVote} value={vote} className="radio-group">
-            <Grid className="voting-options">
-              {Candidates.map((candidate) => (
-                <Box key={candidate.id}>
-                  <GridItem className="voting-option">
+          {Candidates.map((party) => (
+            <div id="party" key={party.id}>
+              <Radio
+                value={party.id.toString()}
+                marginBottom="1rem"
+                padding="1rem"
+                borderColor="#1C4E81"
+              >
+                <h2>{party.party}</h2>
+              </Radio>
+              <Stack
+                className="stack"
+                display="grid"
+                gridTemplateColumns="1fr 1fr"
+                color="#1C4E81"
+                alignItems={"end"}
+              >
+                {party.candidates.map((candidate) => (
+                  <GridItem key={candidate.id} className="grid-item">
                     <Radio
-                      className="radio candidate-party-wrapper"
-                      value={`${candidate.candidate} (${candidate.party})`}
+                      value={candidate.id.toString()}
+                      borderColor="#1C4E81"
                     >
-                      <div>{candidate.candidate}</div>
-                      <div>{candidate.party}</div>
+                      {candidate.candidate}
                     </Radio>
                   </GridItem>
-                </Box>
-              ))}
-            </Grid>
+                ))}
+              </Stack>
+            </div>
+          ))}
+
           </RadioGroup>
+
+
 
           <PopOver vote={vote}></PopOver>
           </Box> : <Text className="red-text">

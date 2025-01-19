@@ -36,7 +36,7 @@ export default function Welcome() {
         <div className="inner-page-container-wide">
           <h1 className="blue-text">Velkommen</h1>
 
-          <Text>Velkommen til Folketingsvalget 2023!</Text>
+          <Text>Velkommen til Folketingsvalget!</Text>
           <Text className="text-margin-top" marginBottom={"2rem"}>
           Vi er glade for at præsentere et praktisk online stemmesystem, der er designet til at styrke din stemme i den demokratiske proces. Vores brugervenlige grænseflade sikrer en problemfri stemmeoplevelse, så du kan afgive din stemme fra din egen enhed i komfort.
           </Text>

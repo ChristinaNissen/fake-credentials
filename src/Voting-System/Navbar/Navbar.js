@@ -18,16 +18,25 @@
  */
 
 import React from "react";
-import { Box, Flex } from "@chakra-ui/react";
+import { useNavigate } from "react-router-dom";
+import { Box, Flex, Button } from "@chakra-ui/react";
 import Logo from "../../assets/logo-folketinget.svg";
 import "./Navbar.css";
 
 export default function Navbar() {
+
+  const navigate = useNavigate();
+
   return (
     <Box className="navbar-container">
-      <Flex height={"90%"}>
+      <Flex gap="1350" height={"90%"}>
         <img src={Logo} alt="logo" />
+        <Button
+        className="blue-btn-help"
+        onClick={() => navigate("/reporting")}>Hjælp</Button>
+      
       </Flex>
+      
     </Box>
   );
 }

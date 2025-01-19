@@ -117,6 +117,17 @@ h3 {
   background-color: var(--secondary_darkblue) !important;
 }
 
+.blue-btn-help {
+  min-width: 4rem !important;
+  background-color: var(--primary_blue) !important;
+  color: var(--secondary_blue) !important;
+  margin-top: 1rem;
+}
+
+.blue-btn-help:hover {
+  background-color: var(--secondary_darkblue) !important;
+}
+
 /* Input */
 .input-field {
   border-color: var(--light_grey) !important;

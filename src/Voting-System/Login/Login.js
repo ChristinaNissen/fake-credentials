@@ -15,6 +15,7 @@ import { useNavigate } from "react-router-dom";
 import { Field, Form, Formik } from "formik";
 import getCurrentUser, { addVoter, loginVoter } from "../../API/Voter";
 import BackgroundImage1 from "../../assets/folketinget-background-image.svg";
+import "./Login.css";
 
 export default function Login() {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -58,7 +59,8 @@ export default function Login() {
   }, []);
 
   return (
-  
+    <div className="outer-page-container-login">
+   
     <Stack minH={"100vh"} direction={{ base: "column", md: "row" }}>
       <Flex flex={1}>
         <Image
@@ -73,9 +75,9 @@ export default function Login() {
         <Stack spacing={4} w={"full"} maxW={"md"}>
 
        
-          <Heading color={"#1C4E81"} fontSize={"xl"}>
-            Velkommen til det digitale folketingsvalg.
-          </Heading>
+          <h2 className="headline-login">
+            Velkommen til det digitale folketingsvalg
+          </h2>
 
           <Text className="text-margin-top">
             For at stemme til folketingsvalget online, bedes du logge ind med de
@@ -143,8 +145,12 @@ export default function Login() {
             )}
           </Formik>
         </Stack>
-      </Flex>
-    </Stack>
 
+       
+      </Flex>
+    
+    </Stack>
+    
+    </div>
   );
 }

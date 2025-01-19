@@ -1,0 +1,10 @@
+.outer-page-container-login {
+    font-family: "Poppins", sans-serif;
+    color: var(--secondary_darkblue) !important;
+  }
+  
+.headline-login{
+    font-family: "Poppins", sans-serif;
+    font-size: 1.3rem !important;
+}
+

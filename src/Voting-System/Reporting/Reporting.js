@@ -61,7 +61,7 @@ export default function Reporting() {
       <div className="outer-page-container">
         <div className="inner-page-container-narrow">
           <div id="reporting-form">
-            <h1 className="blue-text">Report a problem</h1>
+            <h1 className="blue-text">Rapportér et problem</h1>
             <Formik initialValues={{ text: "" }} onSubmit={handleSubmit}>
               {({ errors, touched }) => (
                 <Form>
@@ -75,7 +75,7 @@ Nedenfor kan du rapportere enhver form for problemer, du har oplevet under Folke
                       name="text"
                       type="text"
                       className="report-form"
-                      placeholder="Describe your problem(s) here"
+                      placeholder="Beskriv dit problem(er) her"
                       validate={validateText}
                     />
                     <FormErrorMessage className="error-message-voting-system">

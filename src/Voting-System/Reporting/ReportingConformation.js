@@ -34,7 +34,7 @@ Vi har modtaget din besked og vender tilbage til dig så hurtigt som muligt.
       <Button
         className="blue-btn"
         width={"100%"}
-        onClick={() => navigate("/start")}
+        onClick={() => navigate("/welcome")}
       >
         Afslut
       </Button>

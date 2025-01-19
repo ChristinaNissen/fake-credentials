@@ -40,11 +40,10 @@ export default function Voting() {
       <div className="outer-page-container">
         <div className="inner-page-container-wide">
           <div className="header">
-            <h1 className="blue-text">Voting</h1>
+            <h1 className="blue-text">Afstemning</h1>
 
             <Text  display={voter.attributes.Vote === "" ? "box" : "none"}>
-              In order to vote in the General Election, please select a
-              candidate below and click "Submit vote".
+            For at kunne stemme i Folketingsvalget, vælg venligst en kandidat nedenfor og klik på "Afgiv stemme".
             </Text>
           </div>
           {voter.attributes.Vote === "" ?
@@ -69,8 +68,9 @@ export default function Voting() {
 
           <PopOver vote={vote}></PopOver>
           </Box> : <Text className="red-text">
-              The voting phase is over and it is not possible to vote anymore.
+          Afstemningsfasen er afsluttet, og det er ikke længere muligt at stemme.
             </Text>
+            
 }
         </div>
       </div>

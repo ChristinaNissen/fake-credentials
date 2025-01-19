@@ -34,17 +34,13 @@ export default function Welcome() {
       <Navbar />
       <div className="outer-page-container">
         <div className="inner-page-container-wide">
-          <h1 className="blue-text">Welcome</h1>
+          <h1 className="blue-text">Velkommen</h1>
 
-          <Text>Welcome to the General Election 2023!</Text>
+          <Text>Velkommen til Folketingsvalget 2023!</Text>
           <Text className="text-margin-top" marginBottom={"2rem"}>
-            We are thrilled to introduce a convenient online voting system designed to empower your voice in the democratic
-            process. Our user-friendly interface ensures a seamless voting
-            experience, allowing you to cast your ballot from the comfort of
-            your own device.
+          Vi er glade for at præsentere et praktisk online stemmesystem, der er designet til at styrke din stemme i den demokratiske proces. Vores brugervenlige grænseflade sikrer en problemfri stemmeoplevelse, så du kan afgive din stemme fra din egen enhed i komfort.
           </Text>
-          <Text>Click "Next"
-            and cast your vote.</Text>
+          <Text>Klik på "Næste" og afgiv din stemme.</Text>
 
           {/*    <div>
             <Image src={VotingOverview} />
@@ -72,7 +68,7 @@ export default function Welcome() {
             className="blue-btn"
             marginTop={"2rem"}
           >
-            Next
+            Næste
           </Button>
         </div>
       </div>

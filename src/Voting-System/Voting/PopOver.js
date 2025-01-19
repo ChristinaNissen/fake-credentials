@@ -50,7 +50,7 @@ function PopOver({ vote }) {
     <Popover>
       <PopoverTrigger>
         <Button className="blue-btn" width="100%">
-          Submit vote
+          Afgiv stemme
         </Button>
       </PopoverTrigger>
       <PopoverContent className="pop-over-container">
@@ -58,12 +58,12 @@ function PopOver({ vote }) {
         <PopoverCloseButton />
         <PopoverBody className="pop-over-body">
           <Text>
-            Please check if your vote is entered correctly. Are you sure, you
-            want to vote for:
+            
+Venligst tjek, om din stemme er indtastet korrekt. Er du sikker på, at du vil stemme på:
           </Text>
           <Text className="pop-over-text">{vote}</Text>
           <Flex>
-            <PopoverCloseButton className="no-button">No</PopoverCloseButton>
+            <PopoverCloseButton className="no-button">Nej</PopoverCloseButton>
             <Button
               className="blue-btn"
               mt={0}
@@ -71,7 +71,7 @@ function PopOver({ vote }) {
               disabled={isSubmitting}
             >
               {isSubmitting && <Spinner size="sm" mr={"1rem"} />}
-              Yes
+              Ja
             </Button>
           </Flex>
         </PopoverBody>

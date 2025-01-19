@@ -37,9 +37,10 @@ export default function Confirmation() {
       <Navbar />
       <div className="outer-page-container">
         <div className="inner-page-container-narrow">
-          <h1 className="blue-text">Thank you for voting!</h1>
+          <h1 className="blue-text">
+          Tak for din stemme!</h1>
           <Text>
-            Your vote was successfully stored and will be counted.
+          Din stemme er blevet registreret og vil blive talt med.
           </Text>
           <Button className="blue-btn" onClick={handleSubmit}>
             Log ud 

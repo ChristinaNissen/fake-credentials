@@ -26,17 +26,17 @@ export function ReportingConfirmation(props) {
 
   return (
     <div id={props.id} style={{ visibility: props.visibility }}>
-      <h1 className="blue-text">Thank you for your report</h1>
+      <h1 className="blue-text">Tak for din rapport</h1>
       <Text>
-        We have received your message and will get back to you as soon as
-        possible.
+        
+Vi har modtaget din besked og vender tilbage til dig så hurtigt som muligt.
       </Text>
       <Button
         className="blue-btn"
         width={"100%"}
-        onClick={() => navigate("/info-3")}
+        onClick={() => navigate("/start")}
       >
-        Finish
+        Afslut
       </Button>
     </div>
   );

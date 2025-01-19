@@ -58,6 +58,7 @@ export default function Login() {
   }, []);
 
   return (
+  
     <Stack minH={"100vh"} direction={{ base: "column", md: "row" }}>
       <Flex flex={1}>
         <Image
@@ -70,11 +71,13 @@ export default function Login() {
 
       <Flex p={8} flex={1} align={"center"} justify={"center"}>
         <Stack spacing={4} w={"full"} maxW={"md"}>
+
+       
           <Heading color={"#1C4E81"} fontSize={"xl"}>
             Velkommen til det digitale folketingsvalg.
           </Heading>
 
-          <Text>
+          <Text className="text-margin-top">
             For at stemme til folketingsvalget online, bedes du logge ind med de
             informationer, du har fået fysisk på valgkontoret.
           </Text>
@@ -131,7 +134,7 @@ export default function Login() {
                   color={"#FFF"}
                   backgroundColor={"#1C4E81"}
                   width={"30%"}
-                  className="button"
+                  className="blue-btn"
                   marginTop={"2rem"}
                 >
                   Log ind
@@ -142,5 +145,6 @@ export default function Login() {
         </Stack>
       </Flex>
     </Stack>
+
   );
 }

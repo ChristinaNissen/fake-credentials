@@ -30,13 +30,13 @@ export default function Error() {
         <div className="container-error-page">
           <div className="icon-and-headline">
             <span className="material-symbols-outlined margin-right-icon">
-              error
+              fejl
             </span>
-            <h1 className="darkblue-text">INVALID URL</h1>
+            <h1 className="darkblue-text">UGYLDIG URL</h1>
           </div>
           <Text>
-            Hmm...It does not look like there is a webpage on this URL.
-            Double-check the spelling and try again.
+          Hmm... Det ser ikke ud til, at der er en webside på denne URL.
+          Dobbelttjek stavningen, og prøv igen.
           </Text>
         </div>
       </div>

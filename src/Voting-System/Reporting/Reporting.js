@@ -67,8 +67,8 @@ export default function Reporting() {
                 <Form>
                   <FormControl isInvalid={!!errors.text && touched.text}>
                     <FormLabel marginBottom={"1rem"}>
-                      Below you can report any kind of problems, you have
-                      experienced in General Election 2023.
+                      
+Nedenfor kan du rapportere enhver form for problemer, du har oplevet under Folketingsvalget 2023.
                     </FormLabel>
                     <Field
                       as={Textarea}
